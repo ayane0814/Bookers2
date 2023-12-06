@@ -1,0 +1,24 @@
+<%= render 'list', user: @user, book: @book_ %>
+
+<div class="container">
+    <h2>Book detail</h2>
+    <table>
+        <tr>
+            <td>
+                <%= image_tag @book.user.get_profile_image(100, 100) %><br>
+                <%= link_to @book.user.name, user_path(@book.user.id) %>
+            </td>
+            
+            <td><%= link_to @book.title, book_path(@book.id) %></td>
+            
+            <td><%= @book.body %></td>
+            
+            <td>
+                <% if @book.user_id == current_user.id %>
+                    <%= link_to "Edit", edit_book_path(@book.id) %>
+                    <%= link_to "Destroy", book_path(@book), method: :delete %>
+                <% end %>
+            </td>
+        </tr>
+    </table>
+</div>
