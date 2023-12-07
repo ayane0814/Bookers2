@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>User info</h2>
+    
+    <%= form_with model: @user do |f| %>
+    <div>
+        <div>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+        </div>
+        
+        <div>
+            <%= f.label :image %>
+            <%= f.file_field :profile_image, accept: "image/*" %>
+        </div>
+        
+        <div>
+            <%= f.label :introduction %>
+            <%= f.text_area :introduction %>
+        </div>
+        
+        <div>
+            <%= f.submit "Update User" %>
+        </div>
+    </div>
+    <% end %>
+</div>
