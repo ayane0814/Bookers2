@@ -1,11 +1,10 @@
-<div class="container">
-    
+<div class="col-md-3">
     <div>
         <h2>User info</h2>
         <div>
             <%= image_tag user.get_profile_image(100, 100) %>
         </div>
-        <table>
+        <table class="table">
             <tr>
                 <th>name</th>
                 <td><%= user.name %></td>
@@ -16,9 +15,13 @@
                 <td><%= user.introduction %></td>
             </tr>
         </table>
-        
+        <!--編集のボタンアイコンを作ろうとしたがアイコンの色変わらない-->
         <div>
-            <%= link_to "編集", edit_user_path(user.id) %>
+            <button type="button" class="btn btn-outline-secondary btn-icon-hover">
+                <%= link_to edit_user_path(user.id) do %>
+                    <i class="fa-solid fa-user-gear" style="color: #697486;"></i>
+                <% end %>
+            </button>
         </div>
     </div>
     

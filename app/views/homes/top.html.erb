@@ -1,18 +1,23 @@
-<div class="container">
-    <div class="row">
-        <h1>welcome to <span><i class="fa-solid fa-book"></i>Bookers</span> !!</h1>
+<div class="container w-60 m-auto ">
+    <div class="text-left d-flex justify-content-center">
+        <h1>welcome to <span><i class="fa-solid fa-book"></i><strong>Bookers</strong></span> !!</h1>
     </div>
-    <div class="row">
+    <div class="text-left d-flex justify-content-center">
         <p>
-            In <span><i class="fa-solid fa-book"></i>Bookers</span>,<br>
+            In <span><i class="fa-solid fa-book"></i><strong>Bookers</strong></span>,<br>
             you can share and exchange your opinions, inpressions, and emotions<br>
             about various books!
         </p>
     </div>
-    <div class="row">
-        <%= link_to "Log in", new_user_session_path %>
+    <div class="row w-50 mx-auto">
+        <button type="button" class="btn btn-info btn-sm btn-block p-0 mb-2">
+            <small><%= link_to "Log in", new_user_session_path, class: "text-white" %></small>
+        </button>
     </div>
-    <div class="row">
-        <%= link_to "Sign up", new_user_registration_path %>
+    <div class="row w-50 mx-auto">
+        <button type="button" class=" btn btn-success btn-sm btn-block p-0">
+            <small><%= link_to "Sign up", new_user_registration_path, class: "text-white" %></small>
+        </button>
     </div>
+    
 </div>
