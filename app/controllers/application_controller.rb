@@ -1,18 +1,11 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate_user!, except: [:top, :about]
   before_action :configure_permitted_parameters, if: :devise_controller? 
-  # フラッシュを設定しようとしたが、下のようにやっても無理意味わからん
+  
   def after_sign_in_path_for(resource)
-    flash[:notice] = "Signed in successfully."
-    super
     user_path(current_user)
   end
-
-  def after_sign_up_path_for(resource)
-    flash[:notice] = "Welcome! You have signed up successfully."
-    super
-    user_path(current_user)
-  end
-
+  
   protected
 
     def configure_permitted_parameters

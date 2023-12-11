@@ -1,6 +1,14 @@
 <div class="container">
+    <% if @book_new.errors.any? %>
+        <%= @book_new.errors.count %>error prohibited this obj from being saved:
+        <ul>
+            <% @book_new.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    <% end %>
     <div class="row">
-        <%= render 'list', user: @user_info, book: @book_new %>
+        <%= render 'list', user: @user_info, book: Book.new() %>
         
         <div class="offset-md-1"></div>
         
